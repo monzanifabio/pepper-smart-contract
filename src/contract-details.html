@@ -15,7 +15,6 @@
         <h1 id="contractName"></h1>
         <span id="contractTicker" class="ticker"></span>
       </div>
-      <!-- <span id="contractAddress" class="address">0xcca0c9c38dF61cA</span> -->
       <ul>
         <li id="websiteElement">
           <img src="img/browser.svg" height="24">
@@ -25,7 +24,7 @@
           <img src="img/github.svg" height="24">
           <a id="github" href="" target="_blank">Github</a>
         </li>
-        <li>
+        <li id="etherscanElement">
           <img src="img/file-search.svg" height="24">
           <a id="etherscan" href="" target="_blank">Etherscan</a>
         </li>
@@ -37,6 +36,11 @@
           <img src="img/telegram.svg" height="24">
           <a id="telegram" href="" target="_blank">Telegram</a>
         </li>
+        <div id="contractError">
+          <img src="img/search.svg" height="128">
+          <h1>Contract not found</h1>
+          <p>We could not find a smart contract with that address in our database.<br> The smart contract although, might exist.</p>
+        </div>
     </div>
   </div>
   <script src="contract-details.js"></script>

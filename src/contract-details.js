@@ -57,6 +57,18 @@ chrome.storage.sync.get(['value'], function(result) {
       },
       error: function(errorMessage){
         alert("We could not find a smart contract with that address in our database. The smart contract although, might exist.");
+        $('#contractLogo').css({"display":"none"});
+        $('#websiteElement').css({"display":"none"});
+        website.css({"display":"none"});
+        $('#etherscanElement').css({"display":"none"});
+        etherscan.css({"display":"none"});
+        $('#githubElement').css({"display":"none"});
+        github.css({"display":"none"});
+        $('#twitterElement').css({"display":"none"});
+        twitter.css({"display":"none"});
+        $('#telegramElement').css({"display":"none"});
+        telegram.css({"display":"none"});
+        $('#contractError').css({"display":"block"});
       }
   })
 

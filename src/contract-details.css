@@ -79,6 +79,15 @@ li img {
   opacity: 0.4;
 }
 
+#contractError {
+  display: none;
+  text-align: center;
+}
+#contractError img {
+  padding-bottom: 45px;
+  opacity: 0.4;
+}
+
 .navigation {
   display: flex;
   flex-flow: row wrap;
