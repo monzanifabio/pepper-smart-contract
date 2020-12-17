@@ -20,12 +20,17 @@ chrome.storage.sync.get(['value'], function(result) {
       dataType: 'json',
       success: function(result){
         console.log(result);
-        // alert(result.name + " (" + result.symbol + ")");
         contractLogo.attr('src', 'https://cryptofonts.com/img/icons/' + result.symbol + '.svg')
         contractName.text(result.name);
         contractTicker.text(" (" + result.symbol + ")");
         contractAddress.text(selection);
-        website.attr('href', result.links.homepage[0]);
+        //Website
+        if (result.links.homepage.length === 0) {
+          $('#websiteElement').css({"display":"none"});
+          website.css({"display":"none"});
+        } else {
+          website.attr('href', result.links.homepage[0]);
+        }
         //Github
         if (result.links.repos_url.github.length === 0) {
           $('#githubElement').css({"display":"none"});
