@@ -56,7 +56,6 @@ chrome.storage.sync.get(['value'], function(result) {
         }
       },
       error: function(errorMessage){
-        alert("We could not find a smart contract with that address in our database. The smart contract although, might exist.");
         $('#contractLogo').css({"display":"none"});
         $('#websiteElement').css({"display":"none"});
         website.css({"display":"none"});
