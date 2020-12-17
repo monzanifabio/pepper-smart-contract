@@ -11,13 +11,13 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": ["src/bg/background.js", "src/bg/jquery.min.js"],
+    "scripts": ["src/background.js", "src/jquery.min.js"],
     "persistent": false
   },
   "browser_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "Pepper Smart Contract Checker",
-    "default_popup": "src/browser_action/browser_action.html"
+    "default_popup": "src/popup.html"
   },
   "permissions": [
     "contextMenus",
@@ -26,12 +26,8 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.google.com/*", "http://*/*", "https://*/*"],
-      "css": ["src/inject/inject.css"]
-    },
-    {
-      "matches": ["https://www.google.com/*", "http://*/*", "https://*/*"],
-      "js": ["src/inject/inject.js", "src/bg/jquery.min.js"]
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js", "src/jquery.min.js"]
     }
   ]
 }
