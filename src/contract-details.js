@@ -68,6 +68,8 @@ chrome.storage.sync.get(['value'], function(result) {
         $('#telegramElement').css({"display":"none"});
         telegram.css({"display":"none"});
         $('#contractError').css({"display":"block"});
+        $('#etherscanHelper').text(selection);
+        $('#etherscanHelper').attr('href', 'https://etherscan.io/token/' + selection);
       }
   })
 
