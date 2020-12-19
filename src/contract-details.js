@@ -20,7 +20,7 @@ chrome.storage.sync.get(['value'], function(result) {
       dataType: 'json',
       success: function(result){
         console.log(result);
-        contractLogo.attr('src', 'https://cryptofonts.com/img/icons/' + result.symbol + '.svg')
+        contractLogo.attr('src', result.image.large)
         contractName.text(result.name);
         contractTicker.text(" (" + result.symbol + ")");
         contractAddress.text(selection);
