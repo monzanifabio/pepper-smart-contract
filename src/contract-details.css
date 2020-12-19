@@ -103,6 +103,10 @@ li img {
   opacity: 0.4;
 }
 
+.hidden {
+  display: none;
+}
+
 .navigation {
   display: flex;
   flex-flow: row wrap;

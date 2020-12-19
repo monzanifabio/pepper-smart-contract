@@ -20,7 +20,8 @@ chrome.storage.sync.get(['value'], function(result) {
       dataType: 'json',
       success: function(result){
         console.log(result);
-        contractLogo.attr('src', result.image.large)
+        $('#loadingSpinner').hide();
+        contractLogo.attr('src', result.image.large).show();
         contractName.text(result.name);
         contractTicker.text(" (" + result.symbol + ")");
         contractAddress.text(selection);
@@ -30,32 +31,37 @@ chrome.storage.sync.get(['value'], function(result) {
           website.css({"display":"none"});
         } else {
           website.attr('href', result.links.homepage[0]);
+          $('#websiteElement').show();
         }
         //Github
         if (result.links.repos_url.github.length === 0) {
           $('#githubElement').css({"display":"none"});
           github.css({"display":"none"});
         } else {
-          github.attr('href', result.links.repos_url.github[0]);
+          github.attr('href', result.links.repos_url.github[0]).show();
+          $('#githubElement').show();
         }
         //Etherscan
-        etherscan.attr('href', result.links.blockchain_site[0]);
+        etherscan.attr('href', result.links.blockchain_site[0]).show();
         //Twitter
         if (result.links.twitter_screen_name.length === 0) {
           $('#twitterElement').css({"display":"none"});
           twitter.css({"display":"none"});
         } else {
-          twitter.attr('href', 'https://www.twitter.com/' + result.links.twitter_screen_name)
+          twitter.attr('href', 'https://www.twitter.com/' + result.links.twitter_screen_name).show();
+          $('#twitterElement').show();
         }
         //Telegram
         if (result.links.telegram_channel_identifier.length === 0) {
           $('#telegramElement').css({"display":"none"});
           telegram.css({"display":"none"});
         } else {
-          telegram.attr('href', 'https://www.t.me/' + result.links.telegram_channel_identifier)
+          telegram.attr('href', 'https://www.t.me/' + result.links.telegram_channel_identifier).show();
+          $('#telegramElement').show();
         }
       },
       error: function(errorMessage){
+        $('#loadingSpinner').hide();
         $('#contractLogo').css({"display":"none"});
         $('#websiteElement').css({"display":"none"});
         website.css({"display":"none"});
