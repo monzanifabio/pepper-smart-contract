@@ -79,12 +79,6 @@ p {
   margin-bottom: 15px;
 }
 
-.addressHelper {
-  background-color: #0D1117;
-  border-radius: 50px;
-  padding: 8px 12px;
-}
-
 ul {
  padding: 5px;
 }
@@ -104,8 +98,8 @@ li img {
   text-align: center;
 }
 #contractError img {
-  padding-bottom: 45px;
   opacity: 0.4;
+  margin: 15px;
 }
 
 .hidden {

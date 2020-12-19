@@ -12,6 +12,7 @@ chrome.storage.sync.get(['value'], function(result) {
   var website = $('#website');
   var github = $('#github');
   var etherscan = $('#etherscan');
+  var uniswap = $('#uniswap');
   var twitter = $('#twitter');
   var telegram = $('#telegram');
 
@@ -41,17 +42,21 @@ chrome.storage.sync.get(['value'], function(result) {
           $('#githubElement').css({"display":"none"});
           github.css({"display":"none"});
         } else {
-          github.attr('href', result.links.repos_url.github[0]).show();
+          github.attr('href', result.links.repos_url.github[0]);
           $('#githubElement').show();
         }
         //Etherscan
-        etherscan.attr('href', result.links.blockchain_site[0]).show();
+        etherscan.attr('href', result.links.blockchain_site[0]);
+        $('#etherscanElement').show();
+        //Uniswap
+        uniswap.attr('href', 'https://info.uniswap.org/token/' + selection);
+        $('#uniswapElement').show();
         //Twitter
         if (result.links.twitter_screen_name.length === 0) {
           $('#twitterElement').css({"display":"none"});
           twitter.css({"display":"none"});
         } else {
-          twitter.attr('href', 'https://www.twitter.com/' + result.links.twitter_screen_name).show();
+          twitter.attr('href', 'https://www.twitter.com/' + result.links.twitter_screen_name);
           $('#twitterElement').show();
         }
         //Telegram
@@ -59,7 +64,7 @@ chrome.storage.sync.get(['value'], function(result) {
           $('#telegramElement').css({"display":"none"});
           telegram.css({"display":"none"});
         } else {
-          telegram.attr('href', 'https://www.t.me/' + result.links.telegram_channel_identifier).show();
+          telegram.attr('href', 'https://www.t.me/' + result.links.telegram_channel_identifier);
           $('#telegramElement').show();
         }
       },
@@ -77,8 +82,9 @@ chrome.storage.sync.get(['value'], function(result) {
         $('#telegramElement').css({"display":"none"});
         telegram.css({"display":"none"});
         $('#contractError').css({"display":"block"});
-        $('#etherscanHelper').text(selection);
         $('#etherscanHelper').attr('href', 'https://etherscan.io/token/' + selection);
+        $('#uniswapHelper').attr('href', 'https://info.uniswap.org/token/' + selection);
+
       }
   })
 
