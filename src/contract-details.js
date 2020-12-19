@@ -7,6 +7,7 @@ chrome.storage.sync.get(['value'], function(result) {
   var contractLogo = $('#contractLogo');
   var contractName = $('#contractName');
   var contractTicker = $('#contractTicker');
+  var tokenPrice = $('#tokenPrice');
   var contractAddress = $('#contractAddress');
   var website = $('#website');
   var github = $('#github');
@@ -25,6 +26,8 @@ chrome.storage.sync.get(['value'], function(result) {
         contractName.text(result.name);
         contractTicker.text(" (" + result.symbol + ")");
         contractAddress.text(selection);
+        tokenPrice.text('$ ' + result.market_data.current_price.usd);
+        $('#priceElement').show();
         //Website
         if (result.links.homepage.length === 0) {
           $('#websiteElement').css({"display":"none"});

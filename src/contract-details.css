@@ -17,6 +17,11 @@ h1 {
   color: #f2f2f2;
 }
 
+h2 {
+  font-weight: 300;
+  margin-top: 0;
+}
+
 a {
   color: #ADADAD;
   text-decoration: none;
