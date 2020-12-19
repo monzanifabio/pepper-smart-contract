@@ -3,19 +3,29 @@ html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: #333333;
-  background-color: #F2F2F2;
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+	font-family: 'Work Sans', sans-serif;
+  color: #8b949e;
+  background-color: #0D1117;
 }
 
 h1 {
+  font-size: 2em;
+  font-weight: 400;
   margin-top: 0;
+  margin-bottom: 0;
+  color: #f2f2f2;
 }
 
 a {
   color: #ADADAD;
   text-decoration: none;
 }
+
+p {
+  font-size: 0.9rem;
+}
+
 
 .container {
   width: 100%;
@@ -28,12 +38,11 @@ a {
 .panel {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  background-color: #FFF;
+  padding: 24px;
+  background-color: #161B22;
   border-radius: 1.5rem;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
-  color: #333333;
 }
 
 .panel-header {
@@ -57,8 +66,8 @@ a {
 
 .address {
   font-family: 'Courier New', monospace;
-  background-color: #F2F2F2;
-  color: #ADADAD;
+  background-color: #161B22;
+  color: #8b949e;
   font-weight: 600;
   border-radius: 50px;
   padding: 4px 8px;
@@ -66,7 +75,7 @@ a {
 }
 
 .addressHelper {
-  background-color: #F2F2F2;
+  background-color: #0D1117;
   border-radius: 50px;
   padding: 8px 12px;
 }
@@ -97,18 +106,18 @@ li img {
 .navigation {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-
   list-style: none;
   margin: 0;
+  padding: 8px 15px;
 }
 
-.navigation h2, .navigation img {
+.navigation img {
+  vertical-align: middle;
   text-decoration: none;
-  display: block;
-  padding: 1rem;
-  color: #333333;
+  padding: 0.6rem;
+  margin-bottom: 6px;
 }
 
 @media all and (max-width: 800px) {
