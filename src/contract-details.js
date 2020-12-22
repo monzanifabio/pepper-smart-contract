@@ -69,6 +69,7 @@ chrome.storage.sync.get(['value'], function(result) {
         }
       },
       error: function(errorMessage){
+        console.log(errorMessage);
         $('#loadingSpinner').hide();
         $('#contractLogo').css({"display":"none"});
         $('#websiteElement').css({"display":"none"});
